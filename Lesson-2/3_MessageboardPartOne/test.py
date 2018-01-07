@@ -12,7 +12,7 @@ def test_connect():
     print("Testing connecting to the server.")
     try:
         with socket.socket() as s:
-           s.connect(("localhost", 8000))
+           s.connect(("localhost", 8010))
         print("Connection attempt succeeded.")
         return None
     except socket.error:
@@ -22,7 +22,7 @@ def test_POST():
     '''The server should accept a POST and return the "message" field.'''
     print("Testing POST request.")
     mesg = random.choice(["Hi there!", "Hello!", "Greetings!"])
-    uri = "http://localhost:8000/"
+    uri = "http://localhost:8010/"
     try:
         r = requests.post(uri, data = {'message': mesg})
     except requests.RequestException as e:

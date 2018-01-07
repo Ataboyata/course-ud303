@@ -9,7 +9,7 @@ from urllib.parse import parse_qs
 
 form = '''<!DOCTYPE html>
   <title>Message Board</title>
-  <form method="POST" action="http://localhost:8000/">
+  <form method="POST" action="http://localhost:8013/">
     <textarea name="message"></textarea>
     <br>
     <button type="submit">Post it!</button>
@@ -46,6 +46,6 @@ class MessageHandler(BaseHTTPRequestHandler):
         self.wfile.write(form.encode())
 
 if __name__ == '__main__':
-    server_address = ('', 8000)
+    server_address = ('', 8013)
     httpd = HTTPServer(server_address, MessageHandler)
     httpd.serve_forever()
